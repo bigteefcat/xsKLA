@@ -1,0 +1,244 @@
+#include <stdio.h>
+
+int main() {
+   // printf() displays the string inside quotation
+   printf("Hello, World!");
+   return 0;
+}
+
+#include<stdio.h>
+
+int main()
+{
+/TAB/ printf("\n\n\t\tStudytonight - Best place to learn\n\n\n");
+
+/TAB/ int num1, num2;  
+/TAB/ float fraction;/TAB/  
+/TAB/ char character;
+
+/TAB/ printf("Enter two numbers number\n");
+/TAB/ 
+/TAB/ // Taking integer as input from user
+/TAB/ scanf("%d%i", &num1, &num2);
+/TAB/ printf("\n\nThe two numbers You have entered are %d and %i\n\n", num1, num2);
+
+/TAB/ // Taking float or fraction as input from the user
+/TAB/ printf("\n\nEnter a Decimal number\n");
+/TAB/ scanf("%f", &fraction); 
+/TAB/ printf("\n\nThe float or fraction that you have entered is %f", fraction);
+
+/TAB/ // Taking Character as input from the user
+/TAB/ printf("\n\nEnter a Character\n");
+/TAB/ scanf("%c",&character);
+/TAB/ printf("\n\nThe character that you have entered is %c", character);
+
+/TAB/ printf("\n\n\t\t\tCoding is Fun !\n\n\n");
+/TAB/ 
+/TAB/ return 0;
+}
+
+#include<stdio.h>
+
+int a,b;
+int main()
+{
+/TAB/ printf("\n\n\t\tStudytonight - Best place to learn\n\n\n");
+/TAB/ printf("\n\nEnter the two values to find the greatest and smallest number: \n");
+/TAB/ scanf("%d%d", &a, &b);
+
+/TAB/ if(a == b)
+/TAB/ /TAB/ printf("Both are equal\n");
+/TAB/ /TAB/ 
+/TAB/ else if(a < b)
+/TAB/ {
+/TAB/ /TAB/ printf("\n\nThe largest number is %03d\n", b);
+/TAB/ /TAB/ printf("\nThe smallest number is %03d\n", a);
+/TAB/ /TAB/ printf("\nThe largest number is %03d\n", b);
+/TAB/ }
+/TAB/ else/TAB/ //Only possibility remaining
+/TAB/ {
+/TAB/ /TAB/ printf("The largest number is %03d\n", a);
+/TAB/ /TAB/ printf("The smallest number is %03d\n", b);
+/TAB/ }
+/TAB/ printf("\n\n\t\t\tCoding is Fun !\n\n\n");
+/TAB/ return 0;
+}
+
+#include <stdio.h> 
+// Function to swap elements 
+void swap(int *a, int *b) 
+{ 
+int temp = *a; 
+*a = *b; 
+*b = temp; 
+}  
+// bubble sort function
+void bubbleSort(int array[], int n) 
+{ 
+int i, j; 
+for (i = 0; i < n-1; i++)/TAB/    
+for (j = 0; j < n-i-1; j++) if (array[j] > array[j+1]) 
+swap(&array[j], &array[j+1]); 
+}   
+// Function to print the elements of an array
+void printArray(int array[], int size) 
+{ 
+int i; 
+for (i=0; i < size; i++) 
+printf("%d ", array[i]); 
+printf("n"); 
+}   
+// Main Function
+int main() 
+{ 
+int array[] = {89, 32, 20, 113, -15}; 
+int size = sizeof(array)/sizeof(array[0]); 
+bubbleSort(array, size); 
+printf("Sorted array: n"); 
+printArray(array, size); 
+return 0; 
+}
+
+#include <math.h> 
+#include <stdio.h>   
+// Insertion Sort Function
+void insertionSort(int array[], int n) 
+{ 
+int i, element, j; 
+for (i = 1; i < n; i++) { element = array[i]; j = i - 1; while (j >= 0 && array[j] > element) { 
+array[j + 1] = array[j]; 
+j = j - 1; 
+} 
+array[j + 1] = element; 
+} 
+}   
+// Function to print the elements of an array
+void printArray(int array[], int n) 
+{ 
+int i; 
+for (i = 0; i < n; i++) 
+printf("%d ", array[i]); 
+printf("n"); 
+}  
+// Main Function 
+int main() 
+{ 
+int array[] = { 122, 17, 93, 3, 56 }; 
+int n = sizeof(array) / sizeof(array[0]); 
+insertionSort(array, n); 
+printArray(array, n); 
+return 0; 
+}
+
+#include <stdio.h>  
+// Function to swap elements
+void swap(int *a, int *b) 
+{ 
+int temp = *a; 
+*a = *b; 
+*b = temp; 
+}   
+// Selection Sort
+void selectionSort(int array[], int n) 
+{ 
+int i, j, min_element; 
+for (i = 0; i < n-1; i++) 
+{
+min_element = i; 
+for (j = i+1; j < n; j++) 
+if (array[j] < array[min_element]) 
+min_element = j; 
+swap(&array[min_element], &array[i]); 
+} 
+}   
+// Function to print the elements of an array
+void printArray(int array[], int size) 
+{ 
+int i; 
+for (i=0; i < size; i++) 
+printf("%d ", array[i]); 
+printf("n"); 
+}   
+// Main Function
+int main() 
+{ 
+int array[] = {15, 10, 99, 53, 36}; 
+int size = sizeof(array)/sizeof(array[0]); 
+selectionSort(array, size); 
+printf("Sorted array: n"); 
+printArray(array, size); 
+return 0; 
+}
+
+#include<stdio.h>  
+// Function to swap two elements 
+void swapElements(int* x, int* y) 
+{ 
+int temp = *x; 
+*x = *y; 
+*y = temp; 
+}   
+// Partition function
+int partition (int arr[], int lowIndex, int highIndex) 
+{ 
+int pivotElement = arr[highIndex];
+int i = (lowIndex - 1); 
+for (int j = lowIndex; j <= highIndex- 1; j++) 
+{ 
+if (arr[j] <= pivotElement) 
+{ 
+i++; 
+swapElements(&arr[i], &arr[j]); 
+} 
+} 
+swapElements(&arr[i + 1], &arr[highIndex]); 
+return (i + 1); 
+}   
+// QuickSort Function
+void quickSort(int arr[], int lowIndex, int highIndex) 
+{ 
+if (lowIndex < highIndex) 
+{ 
+int pivot = partition(arr, lowIndex, highIndex); 
+// Separately sort elements before & after partition 
+quickSort(arr, lowIndex, pivot - 1); 
+quickSort(arr, pivot + 1, highIndex); 
+} 
+}   
+// Function to print array
+void printArray(int arr[], int size) 
+{ 
+int i; 
+for (i=0; i < size; i++) 
+printf("%d ", arr[i]); 
+}   
+// Main Function 
+int main() 
+{ 
+int arr[] = {81, 27, 38, 99, 51, 5}; 
+int n = sizeof(arr)/sizeof(arr[0]); 
+quickSort(arr, 0, n-1); 
+printf("Sorted array: "); 
+printArray(arr, n); 
+return 0; 
+}
+
+#include <stdio.h>
+int main() {
+/TAB/ int n, i;
+/TAB/ unsigned long long fact = 1;
+/TAB/ printf("Enter an integer: ");
+/TAB/ scanf("%d", &n);
+
+/TAB/ // shows error if the user enters a negative integer
+/TAB/ if (n < 0)
+/TAB/ /TAB/ printf("Error! Factorial of a negative number doesn't exist.");
+/TAB/ else {
+/TAB/ /TAB/ for (i = 1; i <= n; ++i) {
+/TAB/ /TAB/ /TAB/ fact *= i;
+/TAB/ /TAB/ }
+/TAB/ /TAB/ printf("Factorial of %d = %llu", n, fact);
+/TAB/ }
+
+/TAB/ return 0;
+}
