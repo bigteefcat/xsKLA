@@ -1,0 +1,14 @@
+# +========================================================+
+# |  __  __     ______     __  __     __         ______    |
+# | /\_\_\_\   /\  ___\   /\ \/ /    /\ \       /\  __ \   |
+# | \/_/\_\/_  \ \___  \  \ \  _"-.  \ \ \____  \ \  __ \  |
+# |   /\_\/\_\  \/\_____\  \ \_\ \_\  \ \_____\  \ \_\ \_\ |
+# |   \/_/\/_/   \/_____/   \/_/\/_/   \/_____/   \/_/\/_/ |
+# +========================================================+
+# 
+# DESCRIPTION
+# Sample layout file to explain how to format your own layout for xsKLA
+# You can use layout-blank.txt for a blank layout file with the comments you see here
+# This layout file aims to replicate an average typing style and see how it fairs against the others
+# and how using less than the normal amount of fingers works in strain mapping
+# It uses the Planck's default layout with qwerty base layer

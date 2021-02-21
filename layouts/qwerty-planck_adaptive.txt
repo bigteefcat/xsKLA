@@ -1,0 +1,269 @@
+# +========================================================+
+# |  __  __     ______     __  __     __         ______    |
+# | /\_\_\_\   /\  ___\   /\ \/ /    /\ \       /\  __ \   |
+# | \/_/\_\/_  \ \___  \  \ \  _"-.  \ \ \____  \ \  __ \  |
+# |   /\_\/\_\  \/\_____\  \ \_\ \_\  \ \_____\  \ \_\ \_\ |
+# |   \/_/\/_/   \/_____/   \/_/\/_/   \/_____/   \/_/\/_/ |
+# +========================================================+
+# 
+# DESCRIPTION
+# Sample layout file to explain how to format your own layout for xsKLA
+# This layout file replicates my personal typing style and to show a healthy medium of speed and comfort
+# It uses the Planck's default layout with qwerty base layer
+
+
+### Layer Setup ###
+# Put the number of layers in your here, layer count starts from 1
+#
+layers=3
+
+# Put how long the rows and columns of the layout are, both start from 1
+rowLength=12
+columnLength=4
+
+# The stagger applied to the layout for distance calculation
+# Column stagger goes from left to right, row stagger goes from top to bottom
+# Put as many elements as the length of your rows and columns
+#
+rowStagger=("0" "0" "0" "0" "0" "0" "0" "0" "0" "0" "0" "0")
+columnStagger=("0" "0" "0" "0")
+
+
+# Put the sequence of Modifier keys that need to be pressed in order to activate/deactivate this layer
+# Modifier keys are formatted with an array element of the name of the key followed by an array element with the modifier type
+# Leader = "L"
+# Momentary = "M"
+# Dead/One-Shot = "D"
+# Toggle On = "T1"
+# Toggle Off = "T2"
+# "key" represents when the key is pressed in the sequence
+# Modifiers needed to activate the layer must be before "key" and modifiers needed to deactivate the layer must go after "key"
+# If the layer doesn't have any activation/deactivation modifiers, you only put "key" in the sequence array
+# 
+# Note: Only toggle-offs that apply to the this layer need to be specified after "key" 
+# If you have a toggle key that acts as both On and Off just put the same key name for toggle-off
+# 
+# Another Note: Normal keys can be used as modifiers in something like a leader key sequence, just set the keys after the leader to dead keys
+# Double tap and tap-hold can be implemented by repeating the key in the sequence with the first one set as a dead key
+# (e.g., layerSequence=("MOD1" "D" "MOD1" "M" "key") <- tap-hold modifier)
+#
+layerSequence_1=("key")
+
+# Here you add the keys for the current layer
+# Formatting for a new layer is layer_#=(your keys here); every layer array needs a LayerSequence_# array with the corresponding number
+# The array doesn't need to be put in rows or have spaces between the elements but I recommend it for readability
+# The array has to have the amount of elements needed for the row length and column length defined above
+# Modifier keys don't need to be all uppercase but it must be kept consistent across all your layouts
+# 
+# Some key names necessary for certain parts of the script to run
+# Return/Enter = "ENTER" |for returns in the input file
+# Space = "SPACE"        |for spaces in the input file
+# Backspace = "BCKSP"    |for simulated error calculation which you can enable in the Behavior section
+# Capslock = "CAPSL"     |for capslock optimization which can be enabled in the Behavior section
+# Tab = "TAB"            |for /TAB/ in input file, look at README.md for more info on input file formatting
+#
+# Note: If you have a split keyboard, I recommend having a column of no keys where the split is to avoid unexpected behavior with hand shifting
+# Hand shifting is explained in the Behavior section 
+#
+layer_1= (
+"TAB"   "q"    "w"   "e"   "r"     "t"     "y"     "u"     "i"    "o"    "p"  "BCKPS"
+"ESC"   "a"    "s"   "d"   "f"     "g"     "h"     "j"     "k"    "l"    ";"  "'"
+"SHIFT" "z"    "x"   "c"   "v"     "b"     "n"     "m"     ","    "."    "/"  "ENTER"
+"BCKL"  "CTRL" "ALT" "CMD" "LOWER" "SPACE" "SPACE" "RAISE" "LEFT" "DOWN" "UP" "RIGHT"
+)
+
+layerSequence_2=("SHIFT" "M" "key")
+layer_2= (
+"TAB"   "Q"    "W"   "E"   "R"     "T"     "Y"     "U"     "I"    "O"    "P"  "BCKPS"
+"ESC"   "A"    "S"   "D"   "F"     "G"     "H"     "J"     "K"    "L"    ":"  """
+"SHIFT" "Z"    "X"   "C"   "V"     "B"     "N"     "M"     "<"    ">"    "?"  "ENTER"
+"BCKL"  "CTRL" "ALT" "CMD" "LOWER" "SPACE" "SPACE" "RAISE" "LEFT" "DOWN" "UP" "RIGHT"
+)
+
+
+### Strain Setup ###
+# xsKLA uses per-finger strain layouts as well as other factors for calculations of what finger is best for the current key
+# You must have the same amount of elements as in your layer arrays and can't be empty9
+# The highest value in these arrays will be used as the highest possible key strain in result calculations
+# In mirroredStrain mode, the script expects arrays strain_{T, I, M, R, P, PA} (Thumb, Index, Middle, Ring, Pinky, and Palm)
+# To disable mirroredStrain mode, set mirroredStrain to "false"
+# For non mirrored strain arrays the script expects LPA, LP, LR, LM, LI, LT, RT, RI, RM, RR, RP,and RPA
+# Palm means hitting the key with the side of your hand (e.g., hitting left ctrl with the side of your hand on a normal keyboard)
+#
+# Note: In the case that two fingers have the exact same total strain score to hit a key, the one with the lowest key memory tier will go
+# Key memory is explained in the Behavior section
+#
+mirroredStrain=true
+
+strain_T=(
+"10" "10" "10"  "10"  "10" "10"  "10" "10" "10" "10" "10" "10" 
+"10" "10" "10"  "10"  "10" "10"  "10" "10" "10" "10" "10" "10" 
+"10" "10" "10"  "10"  "10" "10"  "10" "10" "10" "10" "10" "10" 
+"10" "6"  "2.6" "1.6" "1"  "5"   "8"  "10" "10" "10" "10" "10"
+)
+
+strain_I=(
+"10" "10" "5" "3"   "2.2" "5"   "10" "10" "10" "10" "10" "10" 
+"10" "10" "6" "2"   "1"   "1.3" "10" "10" "10" "10" "10" "10" 
+"10" "10" "3" "1.4" "1.6" "1.8" "10" "10" "10" "10" "10" "10" 
+"10" "10" "6" "3.4" "2.6" "4"   "10" "10" "10" "10" "10" "10" 
+)
+
+strain_M=(
+"" "" "" "" "" "" "" "" "" "" "" "" 
+"" "" "" "" "" "" "" "" "" "" "" "" 
+"" "" "" "" "" "" "" "" "" "" "" "" 
+"" "" "" "" "" "" "" "" "" "" "" "" 
+)
+
+strain_R=(
+"" "" "" "" "" "" "" "" "" "" "" "" 
+"" "" "" "" "" "" "" "" "" "" "" "" 
+"" "" "" "" "" "" "" "" "" "" "" "" 
+"" "" "" "" "" "" "" "" "" "" "" "" 
+)
+
+strain_P=(
+"" "" "" "" "" "" "" "" "" "" "" "" 
+"" "" "" "" "" "" "" "" "" "" "" "" 
+"" "" "" "" "" "" "" "" "" "" "" "" 
+"" "" "" "" "" "" "" "" "" "" "" "" 
+)
+
+strain_PA=(
+"" "" "" "" "" "" "" "" "" "" "" "" 
+"" "" "" "" "" "" "" "" "" "" "" "" 
+"" "" "" "" "" "" "" "" "" "" "" "" 
+"" "" "" "" "" "" "" "" "" "" "" "" 
+)
+
+
+### Penalties ###
+# Penalties are one of the factors used to calculate the best finger per move
+# All penalties stack on top of the base strain value of a move
+
+# Cross-over penalties, the strain value added to when a certain finger is directly over or under another finger
+pinkyOverRing=
+pinkyUnderRing=
+ringOverPinky=
+ringUnderPinky=
+ringOverMiddle=
+ringUnderMiddle=
+middleOverRing=
+middleUnderRing=
+middleOverIndex=
+middleUnderIndex=
+indexOverMiddle=
+indexUnderMiddle=
+
+# A percentage of how much of the distance of the current finger to both adjacent fingers is added to the strain score
+distanceFromAdjacentFingersX=
+distanceFromAdjacentFingersY=
+
+# Similar to distanceFromAdjacentFingers but calculates distance from the lowest strain key for that finger
+distanceFromLowestStrain=
+
+
+# Modifier strain, adds strain per modifier key needed to press a key
+modStrain_L=
+modStrain_M=
+modStrain_D=
+modStrain_T1=
+modStrain_T2=
+
+# Same finger penalty
+# Adds strain for when a finger has to travel consecutively
+# This is applied per key that has to be pressed by the same finger
+#
+sameFingerStrain=
+
+# Hand shift penalty
+# The first value is the penalty for moving hand to the left/right per column
+# The second is the penalty applied every key that a hand is in a shifted state
+# restingPenaltyStacked determines if the second penalty is stacked or linear
+# (restingPenaltyStacked=true; restingPenalty=1 > one column over = 1 point penalty, 3 columns over = 3 point penalty)
+# (restingPenaltyStacked=false; restingPenalty=1 > one column over = 1 point penalty, 3 columns over = 1 point penalty)
+# 
+shiftPenalty=
+restingPenalty=
+restingPenaltyStacked=true
+
+# The penalties applied depending on finger placement for two consecutive keys
+# These only apply when the two keys are hit by the same hand and aren't the same key
+# The elements represent same row, 1-row jump, and 2-row jump penalties respectively
+# For penalty_##, the first letter(s) is the first finger of the bigram and the second one is the second finger of the bigram
+#
+# Note: These penalties are stacked with the other penalties so you should account for them when setting these 
+# otherwise certain moves may be over penalized and cause unexpected behavior during analysis
+#
+penalty_II=("" "" "")
+penalty_IM=("" "" "")
+penalty_IR=("" "" "")
+penalty_IP=("" "" "")
+penalty_IT=("" "" "")
+penalty_IPA=("" "" "")
+penalty_MI=("" "" "")
+penalty_MM=("" "" "")
+penalty_MR=("" "" "")
+penalty_MP=("" "" "")
+penalty_MT=("" "" "")
+penalty_MPA=("" "" "")
+penalty_RI=("" "" "")
+penalty_RM=("" "" "")
+penalty_RR=("" "" "")
+penalty_RP=("" "" "")
+penalty_RT=("" "" "")
+penalty_RPA=("" "" "")
+penalty_PI=("" "" "")
+penalty_PM=("" "" "")
+penalty_PR=("" "" "")
+penalty_PP=("" "" "")
+penalty_PT=("" "" "")
+penalty_PPA=("" "" "")
+penalty_TI=("" "" "")
+penalty_TM=("" "" "")
+penalty_TR=("" "" "")
+penalty_TP=("" "" "")
+penalty_TT=("" "" "")
+penalty_TPA=("" "" "")
+penalty_PAI=("" "" "")
+penalty_PAM=("" "" "")
+penalty_PAR=("" "" "")
+penalty_PAP=("" "" "")
+penalty_PAT=("" "" "")
+penalty_PAPA=("" "" "")
+
+ 
+### Behavior ###
+# These variables directly effect the typing style of the analysis for this layout
+
+# How many characters pass without a specific finger moving before it returns to the key of lowest strain
+# There are three memory tiers that changes how many characters pass before returns and is based off of the strain of its current position
+# The first element is how many characters pass before the finger returns and the second element is the max strain of that tier
+# Anything above tier three automatically returns the finger to the key of lowest strain
+#
+keyMemory1=("" "")
+keyMemory2=("" "")
+keyMemory3=("" "")
+
+# Hand shift only goes inward; left hand only shifts right, right hand only shifts left
+# It works by making temporary strain maps for every shifted position and calculates strain of the shifted positions as well as default positions
+# enterForesight is how many upcoming keys the script looks at to determine if shifting is beneficial
+# exitForesight is similar but determines the foresight used to return from a shifted position
+# maxShift sets the max amount of columns that the hand can shift to
+# boundaryStrain is what strain value the columns outside of the predefined strain maps are set to
+# To disable hand shifting, set maxShift to zero
+#
+enterForesight=
+exitForesight=
+maxShift=
+boundaryStrain=
+
+# The amount of uppercase keys in a row before capslock is used; set to 0 to disable capslock optimization
+capsLock=
+
+# Simulates errors to count backspace usage. Set this between 0.001 and 1; set to 1 for no error simulation
+# Calculated by taking a random percentage every key and if it's higher than the set accuracy it registers as an error
+# In the event of an error, the strain for the original key is still calculated but simulates pressing backspace and the original key again after
+#
+accuracy=
