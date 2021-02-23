@@ -33,4 +33,4 @@ There are no arguments to pass when you run xsKLA; everything is handled by the 
 - `globalBehavior` does the same for behavior.
 
 #### layout configuration
-Check layouts/qwerty-planck_english-adaptive.txt for an in-depth explanation of how to set up a layout file.
+Check layouts/qwerty-planck_adaptive.txt for an in-depth explanation of how to set up a layout file.
