@@ -62,9 +62,6 @@ layerSequence_1=("key")
 # Capslock = "CAPSL"     |for capslock optimization which can be enabled in the Behavior section
 # Tab = "TAB"            |for /TAB/ in input file, look at README.md for more info on input file formatting
 #
-# Note: If you have a split keyboard, I recommend having a column of no keys where the split is to avoid unexpected behavior with hand shifting
-# Hand shifting is explained in the Behavior section 
-#
 layer_1= (
 "TAB"   "q"    "w"   "e"   "r"     "t"     "y"     "u"     "i"    "o"    "p"  "BCKPS"
 "ESC"   "a"    "s"   "d"   "f"     "g"     "h"     "j"     "k"    "l"    ";"  "'"
@@ -96,45 +93,45 @@ layer_2= (
 mirroredStrain=true
 
 strain_T=(
-"10" "10" "10"  "10"  "10" "10"  "10" "10" "10" "10" "10" "10" 
-"10" "10" "10"  "10"  "10" "10"  "10" "10" "10" "10" "10" "10" 
-"10" "10" "10"  "10"  "10" "10"  "10" "10" "10" "10" "10" "10" 
-"10" "6"  "2.6" "1.6" "1"  "5"   "8"  "10" "10" "10" "10" "10"
+"10" "10" "10" "10" "10"  "10" "10"  "10" "10" "10" "10" "10" 
+"10" "10" "10" "10" "10"  "10" "10"  "10" "10" "10" "10" "10" 
+"10" "10" "10" "10" "10"  "10" "10"  "10" "10" "10" "10" "10" 
+"10" "7"  "4"  "2"  "1.4" "1"  "3.2" "10" "10" "10" "10" "10"
 )
 
 strain_I=(
-"10" "10" "5" "3"   "2.2" "5"   "10" "10" "10" "10" "10" "10" 
-"10" "10" "6" "2"   "1"   "1.3" "10" "10" "10" "10" "10" "10" 
-"10" "10" "3" "1.4" "1.6" "1.8" "10" "10" "10" "10" "10" "10" 
-"10" "10" "6" "3.4" "2.6" "4"   "10" "10" "10" "10" "10" "10" 
+"10" "10" "7" "3.4" "2.4" "3" "10" "10" "10" "10" "10" "10" 
+"10" "10" "6" "1.4" "1.1" "1.3" "10" "10" "10" "10" "10" "10" 
+"10" "10" "6.5" "1.3" "1.5" "2.2" "10" "10" "10" "10" "10" "10" 
+"10" "10" "10" "10" "10" "10" "10" "10" "10" "10" "10" "10" 
 )
 
 strain_M=(
-"" "" "" "" "" "" "" "" "" "" "" "" 
-"" "" "" "" "" "" "" "" "" "" "" "" 
-"" "" "" "" "" "" "" "" "" "" "" "" 
-"" "" "" "" "" "" "" "" "" "" "" "" 
+"10" "10" "4"   "1.5" "1.4" "5" "10" "10" "10" "10" "10" "10" 
+"10" "10" "1.6" "1"   "1.3" "3.2" "10" "10" "10" "10" "10" "10" 
+"10" "10" "3.4" "2"   "3"   "3.6" "10" "10" "10" "10" "10" "10" 
+"10" "10" "10" "10" "10" "10" "10" "10" "10" "10" "10" "10" 
 )
 
 strain_R=(
-"" "" "" "" "" "" "" "" "" "" "" "" 
-"" "" "" "" "" "" "" "" "" "" "" "" 
-"" "" "" "" "" "" "" "" "" "" "" "" 
-"" "" "" "" "" "" "" "" "" "" "" "" 
+"10" "2.5" "2.2" "2.4" "5"  "10" "10" "10" "10" "10" "10" "10"
+"10" "2.4" "2"   "2.6" "4"  "10" "10" "10" "10" "10" "10" "10"
+"10" "3"   "2.4" "3"   "5"  "10" "10" "10" "10" "10" "10" "10"
+"10" "10"  "10"  "10"  "10" "10" "10" "10" "10" "10" "10" "10"
 )
 
 strain_P=(
-"" "" "" "" "" "" "" "" "" "" "" "" 
-"" "" "" "" "" "" "" "" "" "" "" "" 
-"" "" "" "" "" "" "" "" "" "" "" "" 
-"" "" "" "" "" "" "" "" "" "" "" "" 
+"3.5" "3.3" "4"   "10" "10" "10" "10" "10" "10" "10" "10" "10" 
+"3.2" "3"   "3.2" "10" "10" "10" "10" "10" "10" "10" "10" "10" 
+"4"   "3.6" "5"   "10" "10" "10" "10" "10" "10" "10" "10" "10" 
+"6"   "10" "10"   "10" "10" "10" "10" "10" "10" "10" "10" "10" 
 )
 
 strain_PA=(
-"" "" "" "" "" "" "" "" "" "" "" "" 
-"" "" "" "" "" "" "" "" "" "" "" "" 
-"" "" "" "" "" "" "" "" "" "" "" "" 
-"" "" "" "" "" "" "" "" "" "" "" "" 
+"10" "10" "10" "10" "10" "10" "10" "10" "10" "10" "10" "10"
+"10" "10" "10" "10" "10" "10" "10" "10" "10" "10" "10" "10"
+"10" "10" "10" "10" "10" "10" "10" "10" "10" "10" "10" "10"
+"2"  "4" "10" "10" "10" "10" "10" "10" "10" "10" "10" "10"
 )
 
 
@@ -143,59 +140,47 @@ strain_PA=(
 # All penalties stack on top of the base strain value of a move
 
 # Cross-over penalties, the strain value added to when a certain finger is directly over or under another finger
-pinkyOverRing=
-pinkyUnderRing=
-ringOverPinky=
-ringUnderPinky=
-ringOverMiddle=
-ringUnderMiddle=
-middleOverRing=
-middleUnderRing=
-middleOverIndex=
-middleUnderIndex=
-indexOverMiddle=
-indexUnderMiddle=
+pinkyOverRing=2
+pinkyUnderRing=3
+ringOverPinky=1
+ringUnderPinky=1.2
+ringOverMiddle=.4
+ringUnderMiddle=1.2
+middleOverRing=3
+middleUnderRing=1.1
+middleOverIndex=0.8
+middleUnderIndex=4
+indexOverMiddle=4
+indexUnderMiddle=0.6
 
 # A percentage of how much of the distance of the current finger to both adjacent fingers is added to the strain score
-distanceFromAdjacentFingersX=
-distanceFromAdjacentFingersY=
+distanceFromAdjacentFingersX=1
+distanceFromAdjacentFingersY=0.2
 
 # Similar to distanceFromAdjacentFingers but calculates distance from the lowest strain key for that finger
-distanceFromLowestStrain=
+distanceFromLowestStrain=.1
 
 
-# Modifier strain, adds strain per modifier key needed to press a key
-modStrain_L=
-modStrain_M=
-modStrain_D=
-modStrain_T1=
-modStrain_T2=
+# Adds strain for each modifier key in a chord needed to output the intended key
+chordStrain=0.4
 
 # Same finger penalty
 # Adds strain for when a finger has to travel consecutively
 # This is applied per key that has to be pressed by the same finger
 #
-sameFingerStrain=
-
-# Hand shift penalty
-# The first value is the penalty for moving hand to the left/right per column
-# The second is the penalty applied every key that a hand is in a shifted state
-# restingPenaltyStacked determines if the second penalty is stacked or linear
-# (restingPenaltyStacked=true; restingPenalty=1 > one column over = 1 point penalty, 3 columns over = 3 point penalty)
-# (restingPenaltyStacked=false; restingPenalty=1 > one column over = 1 point penalty, 3 columns over = 1 point penalty)
-# 
-shiftPenalty=
-restingPenalty=
-restingPenaltyStacked=true
+sameFingerStrain=1.2
 
 # The penalties applied depending on finger placement for two consecutive keys
+
 # These only apply when the two keys are hit by the same hand and aren't the same key
 # The elements represent same row, 1-row jump, and 2-row jump penalties respectively
 # For penalty_##, the first letter(s) is the first finger of the bigram and the second one is the second finger of the bigram
+# Set bigramPenalty to true to enable
 #
 # Note: These penalties are stacked with the other penalties so you should account for them when setting these 
 # otherwise certain moves may be over penalized and cause unexpected behavior during analysis
 #
+bigramPenalty=false
 penalty_II=("" "" "")
 penalty_IM=("" "" "")
 penalty_IR=("" "" "")
@@ -242,28 +227,15 @@ penalty_PAPA=("" "" "")
 # The first element is how many characters pass before the finger returns and the second element is the max strain of that tier
 # Anything above tier three automatically returns the finger to the key of lowest strain
 #
-keyMemory1=("" "")
-keyMemory2=("" "")
-keyMemory3=("" "")
-
-# Hand shift only goes inward; left hand only shifts right, right hand only shifts left
-# It works by making temporary strain maps for every shifted position and calculates strain of the shifted positions as well as default positions
-# enterForesight is how many upcoming keys the script looks at to determine if shifting is beneficial
-# exitForesight is similar but determines the foresight used to return from a shifted position
-# maxShift sets the max amount of columns that the hand can shift to
-# boundaryStrain is what strain value the columns outside of the predefined strain maps are set to
-# To disable hand shifting, set maxShift to zero
-#
-enterForesight=
-exitForesight=
-maxShift=
-boundaryStrain=
+keyMemory1=("4" "3")
+keyMemory2=("3" "4")
+keyMemory3=("2" "6")
 
 # The amount of uppercase keys in a row before capslock is used; set to 0 to disable capslock optimization
-capsLock=
+capsLock=0
 
 # Simulates errors to count backspace usage. Set this between 0.001 and 1; set to 1 for no error simulation
 # Calculated by taking a random percentage every key and if it's higher than the set accuracy it registers as an error
 # In the event of an error, the strain for the original key is still calculated but simulates pressing backspace and the original key again after
 #
-accuracy=
+accuracy=0.98

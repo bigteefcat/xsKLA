@@ -1,58 +1,61 @@
-#!/bin/bash
-input="$1"
-layout="$2"
+#! /bin/bash
+
+# formats text input, pass in input text
+formatText () {
+	
+	# turns input into array of words and formats it
+	while read line; do
+		inputLines+=("$line") # turns input into lines
+		while read -a word; do # turns lines into words
+			for i in "${word[@]}"; do
+				inputWords+=("$i" "SPACE") # adds word and SPACE to new array for every word
+			done
+		done < <(echo "$line")
+		inputWords+=("$word" "ENTER") # adds the last word of the line along with ENTER
+	done < $1
+	
+	# repeats line to words for the last line of the array
+	while read -a word; do
+                for word in "${word[@]}"; do
+                        inputWords+=("$word" "SPACE")
+                done
+        done < <(echo "$line")
+	
+	# turn words array into letters
+	for word in "${inputWords[@]}"; do 
+		case "$word" in
+			"SPACE" ) inputLetters+=("SPACE") ;;
+			"ENTER" ) inputLetters+=("ENTER") ;;
+			"TAB" ) inputLetters+=("TAB") ;;
+			* )  
+			while read -N1 letter; do
+				inputLetters+=("$letter")
+			done < <(echo "$word")
+			inputLetters+=("$letter")
+			;;
+		esac
+	done
+
+	# deletes \r's and \n's
+	for (( i="${#inputLetters[@]}"; i>=0; i-- )); do 
+		if [[ "${inputLetters[$i]}" == $'\r' ]] || [[ "${inputLetters[$i]}" == $'\n' ]] || [[ -z "${inputLetters[$i]}" ]]; then
+			unset "inputLetters[$i]"
+		fi
+	done
+	inputLetters=("${inputLetters[@]}") # re-indexing
+
+	for (( i=0; i<"${#inputLetters[@]}"; i++ )); do
+		case ${inputLetters[$i]} in
+			ENTER ) unset "inputLetters[$i-1]" ;; # removes the space before enters
+			TAB ) unset "inputLetters[$i+1]" ;; # removes the spaces after tabs
+			* ) ;;
+		esac
+	done
+	inputLetters=("${inputLetters[@]}") # re-indexing
+}
 
 
-
-### Make an array of letters from the input file ###
-
-# make array of words
-while read line; do
-	input_words+=("$line" "ENTER")
-done < $input
-input_words+=("$line") # add last line to array
-for (( i="${#input_words[@]}"; i>0; i-- )); do
-	if [[ -z "${input_words[$i]}" ]]; then
-		unset "input_words[$i]"
-	fi
-done # remove empty strings
-
-
-# translate word array to letters_raw
-for i in "${input_words[@]}"; do
-	if [[ $i != "ENTER" ]]; then
-		while read -N1 letter; do
-			input_letters_raw+=("$letter")
-		done < <(echo "$i") # seperate words into letters
-	else
-		input_letters_raw+=("ENTER") # if item is ENTER add ENTER to letter_raw
-	fi
+formatText $1
+for i in "${inputLetters[@]}"; do
+	echo "$i"
 done
-
-
-# format letters_raw into letters_processed
-for (( i="${#input_letters_raw[@]}"; i>0; i-- )); do
-	if [[ "${input_letters_raw[$i]}" == $'\n' ]]; then
-		unset "input_letters_raw[$i]" # remove line breaks
-	elif [[ "${input_letters_raw[$i]}" == [[:space:]] ]]; then
-                # echo "$i"
-		input_letters_raw[$i]="SPACE" # replace empty strings with SPACE
-	fi
-done
-for (( i=0; i<"${#input_letters_raw[@]}"; i++ )); do
-	if [[ -n "${input_letters_raw[$i]}" ]]; then
-		input_letters_processed+=("${input_letters_raw[$i]}")
-	fi
-done # transfers letters_raw into letters_processed to remove gaps
-
-
-
-### Calculate finger strain and travel distances  ###
-
-# source layouts and config
-. ./config.txt
-. $2
-
-
-# find location of input key, calculate strain based off and key travel, then strain based off location of other fingers
-
