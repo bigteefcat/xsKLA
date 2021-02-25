@@ -1,7 +1,11 @@
 <h1 align="center">xsKLA</h1>
 <b> WIP: NOT YET FUNCTIONAL</b><br>
 
+<<<<<<< HEAD
 `xsKLA` or [xeran's smart Keyboard Layout Analyzer] is a script to analyze keyboard layouts and typing styles. There are many other layout analyzers but xsKLA stands out by being extremely customizable and allowing scoring of different styles of typing so you aren't only confined to test against a strict robotic touchtype method that doesn't take into account the intricacies of real typing. xsKLA also has support for typo simulation, dynamic finger movement, capslock usage, in-depth penalty rules, and much more.
+=======
+`xsKLA` or [xeran's smart Keyboard Layout Analyzer] is a bash script made to analyze keyboard layouts and typing styles. There are many other layout analyzers but xsKLA stands out by being extremely customizable and allowing scoring of different styles of typing so you aren't only confined to test against a strict robotic touchtype method that doesn't take into account the intricacies of real typing. xsKLA also has support for typo simulation, dynamic finger movement, capslock usage, in-depth penalty rules, and much more.
+>>>>>>> 44f0e5428e1c1e56ccadfa60928037207565c686
 
 
 ### To-do
@@ -20,6 +24,7 @@
 - [ ] Chording Penalty
 - [ ] Multiple character per key support
 - [ ] Bigram analysis based off a corpus
+- [ ] Optimizations
 
 
 ### Usage
