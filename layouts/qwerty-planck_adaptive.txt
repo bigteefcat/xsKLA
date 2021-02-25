@@ -13,11 +13,11 @@
 
 
 ### Layer Setup ###
-# Put the number of layers in your here, layer count starts from 1
+# Put the number of layers in your here
 #
-layers=3
+layers=4
 
-# Put how long the rows and columns of the layout are, both start from 1
+# Put how long the rows and columns of the layout are
 rowLength=12
 columnLength=4
 
@@ -62,18 +62,18 @@ layerSequence_1=("key")
 # Capslock = "CAPSL"     |for capslock optimization which can be enabled in the Behavior section
 # Tab = "TAB"            |for /TAB/ in input file, look at README.md for more info on input file formatting
 #
-layer_1= (
+layer_1=(
 "TAB"   "q"    "w"   "e"   "r"     "t"     "y"     "u"     "i"    "o"    "p"  "BCKPS"
-"ESC"   "a"    "s"   "d"   "f"     "g"     "h"     "j"     "k"    "l"    ";"  "'"
-"SHIFT" "z"    "x"   "c"   "v"     "b"     "n"     "m"     ","    "."    "/"  "ENTER"
+"ESC"   "a"    "s"   "d"   "f"     "g"     "h"     "j"     "k"    "l"    "\;"  "\'"
+"SHIFT" "z"    "x"   "c"   "v"     "b"     "n"     "m"     "\,"    "\."    "\/"  "ENTER"
 "BCKL"  "CTRL" "ALT" "CMD" "LOWER" "SPACE" "SPACE" "RAISE" "LEFT" "DOWN" "UP" "RIGHT"
 )
 
 layerSequence_2=("SHIFT" "M" "key")
-layer_2= (
+layer_2=(
 "TAB"   "Q"    "W"   "E"   "R"     "T"     "Y"     "U"     "I"    "O"    "P"  "BCKPS"
-"ESC"   "A"    "S"   "D"   "F"     "G"     "H"     "J"     "K"    "L"    ":"  """
-"SHIFT" "Z"    "X"   "C"   "V"     "B"     "N"     "M"     "<"    ">"    "?"  "ENTER"
+"ESC"   "A"    "S"   "D"   "F"     "G"     "H"     "J"     "K"    "L"    "\:"  "\""
+"SHIFT" "Z"    "X"   "C"   "V"     "B"     "N"     "M"     "\<"    "\>"    "\?"  "ENTER"
 "BCKL"  "CTRL" "ALT" "CMD" "LOWER" "SPACE" "SPACE" "RAISE" "LEFT" "DOWN" "UP" "RIGHT"
 )
 
@@ -179,7 +179,7 @@ sameFingerStrain=1.2
 #
 # Note: These penalties are stacked with the other penalties so you should account for them when setting these 
 # otherwise certain moves may be over penalized and cause unexpected behavior during analysis
-#
+
 bigramPenalty=false
 penalty_II=("" "" "")
 penalty_IM=("" "" "")
@@ -231,7 +231,7 @@ keyMemory1=("4" "3")
 keyMemory2=("3" "4")
 keyMemory3=("2" "6")
 
-# The amount of uppercase keys in a row before capslock is used; set to 0 to disable capslock optimization
+# The amount of uppercase keys in a row before capslock is used. set to 0 to disable capslock optimization
 capsLock=0
 
 # Simulates errors to count backspace usage. Set this between 0.001 and 1; set to 1 for no error simulation
